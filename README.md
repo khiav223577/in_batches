@@ -1,7 +1,7 @@
 # in_batches
 
 [![Gem Version](https://img.shields.io/gem/v/in_batches.svg?style=flat)](https://rubygems.org/gems/in_batches)
-[![Build Status](https://travis-ci.org/khiav223577/in_batches.svg?branch=master)](https://travis-ci.org/khiav223577/in_batches)
+[![Build Status](https://api.travis-ci.com/khiav223577/in_batches.svg?branch=master)](https://travis-ci.com/khiav223577/in_batches)
 [![RubyGems](http://img.shields.io/gem/dt/in_batches.svg?style=flat)](https://rubygems.org/gems/in_batches)
 [![Code Climate](https://codeclimate.com/github/khiav223577/in_batches/badges/gpa.svg)](https://codeclimate.com/github/khiav223577/in_batches)
 [![Test Coverage](https://codeclimate.com/github/khiav223577/in_batches/badges/coverage.svg)](https://codeclimate.com/github/khiav223577/in_batches/coverage)
