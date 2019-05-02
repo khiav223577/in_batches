@@ -2,4 +2,9 @@
 
 require 'in_batches/active_record/relation/batch_enumerator'
 require 'in_batches/active_record/batches'
-require 'in_batches/active_record/querying'
+
+class ActiveRecord::Base
+  def self.in_batches(*args)
+    where('').in_batches(*args)
+  end
+end
