@@ -2,6 +2,4 @@
 
 require 'in_batches/version'
 require 'active_record'
-
-module InBatches
-end
+require 'in_batches/active_record_extensions' if not defined?(ActiveRecord::Batches::BatchEnumerator)
