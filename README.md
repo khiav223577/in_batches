@@ -23,6 +23,23 @@ And then execute:
 Or install it yourself as:
 
     $ gem install in_batches
+    
+## Usage
+
+Same as Rails 5's #in_batches method.
+
+### update in batches
+```rb
+User.in_batches.update_all('money = money + 1')
+```
+
+### delete in batches and throttle the delete queries
+```rb
+User.where("age > 21").in_batches do |users|
+  users.delete_all
+  sleep(10)
+end
+```
 
 ## Development
 
