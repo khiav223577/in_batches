@@ -4,9 +4,7 @@ module ActiveRecord
   module Batches
     def in_batches(of: 1000, begin_at: nil, end_at: nil, load: false)
       relation = self
-      unless block_given?
-        return BatchEnumerator.new(of: of, begin_at: begin_at, end_at: end_at, relation: self)
-      end
+      return BatchEnumerator.new(of: of, begin_at: begin_at, end_at: end_at, relation: self) unless block_given?
 
       if logger && (arel.orders.present? || arel.taken.present?)
         logger.warn("Scoped order and limit are ignored, it's forced to be batch order and batch size")
@@ -20,17 +18,17 @@ module ActiveRecord
         if load
           records = batch_relation.to_a
           ids = batch_relation.pluck(primary_key)
-          relation_yielded = self.where(primary_key => ids).reorder(batch_order)
+          relation_yielded = where(primary_key => ids).reorder(batch_order)
           relation_yielded.load_records(records)
         else
           ids = batch_relation.pluck(primary_key)
-          relation_yielded = self.where(primary_key => ids).reorder(batch_order)
+          relation_yielded = where(primary_key => ids).reorder(batch_order)
         end
 
         break if ids.empty?
 
         primary_key_offset = ids.last
-        raise ArgumentError.new("Primary key not included in the custom select clause") unless primary_key_offset
+        fail ArgumentError, 'Primary key not included in the custom select clause' unless primary_key_offset
 
         yield relation_yielded
 
