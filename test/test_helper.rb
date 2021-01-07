@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start 'test_frameworks'
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'in_batches'
 
+require 'in_batches'
 require 'minitest/autorun'
 
 ActiveRecord::Base.establish_connection(
