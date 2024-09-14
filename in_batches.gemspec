@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'in_batches'
   spec.version       = InBatches::VERSION
   spec.authors       = ['khiav reoy']
-  spec.email         = ['mrtmrt15xn@yahoo.com.tw']
+  spec.email         = ['khiav223577@gmail.com']
 
   spec.summary       = 'Backport in_batches from Rails 5 for Rails 3 and 4.'
   spec.description   = 'Backport in_batches from Rails 5 for Rails 3 and 4.'
